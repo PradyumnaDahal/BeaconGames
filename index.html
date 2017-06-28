@@ -125,9 +125,10 @@ menuV = true;
      if (keys[82]){restart = true}; // S
      if (keys[65] || keys[37]){xPos -= 10}; // A
      if (keys[68] || keys[39]){xPos += 10}; // D    
-
+     if (keys[87]) {enemyY -= 8}
+     
      if (yPos > Game.height/2 - 20) { yPos = Game.height/2 - 20}
-     if (colDown == false || restart == true || (xPos == 0 && yPos > 80 && enemyY > 80)) {yPos += .405}
+     if (colDown == false || restart == true || (xPos == 0 && yPos > 80 && enemyY + yPos > 80)) {yPos += .405}
      if (xPos < 1 && colDown == false) {yPos += .605; enemyY += 5}
      if (level == 0 && colDown == false){yPos += 2}              
                
@@ -158,9 +159,9 @@ function ebox(x, y, width, height, color, levelN, imageName) {
    if (levelN == level ) { ctx.fillStyle = color;
      
     if (imageName != undefined){ctx.drawImage(imageA[imageName], x, y - enemyY, width, height) }
-    if (imageName == undefined){ctx.fillRect(x, y - enemyY + 50, width, height)}
+    if (imageName == undefined){ctx.fillRect(x, y - enemyY  + 50, width, height)}
 
-     if (xPos + 5 + pWidth > x && xPos - 5  < x + width && enemyY  < y  && enemyY +  pHeight  > y ) {restart = true} }
+     if (xPos + 5 + pWidth > x && xPos - 5  < x + width && enemyY + yPos < y  && enemyY + yPos + pHeight  > y ) {restart = true} }
     
     }
                 
@@ -254,7 +255,7 @@ if (clickM =="play") {menuV = false; clickM = ""}
  }               
  function lockF() {
      
-     if (endHeight[level] < enemyY) { lock = level   
+     if (endHeight[level] == enemy + yPos) { lock = level   
    
      }
  }           
@@ -289,9 +290,9 @@ if (clickM =="play") {menuV = false; clickM = ""}
             
                 //----------Update--------------------
      
-             function update() {  ctx.clearRect(0,0, Game.width, Game.height);
-             
-    if (level > 2 && level < 80) {menuV = true}
+             function update() { ctx.clearRect(0,0, Game.width, Game.height);
+           
+    if (level >= 5 && level < 80) {menuV = true}
                 
                                     
                                 
@@ -300,8 +301,8 @@ endHeight[-1]=0;
 endHeight[0]= 300;   
 endHeight[1]= 1000;                    
 endHeight[2]= 2000;                    
-endHeight[3]= 500;                    
-endHeight[4]= 500;                    
+endHeight[3]= 2500;                    
+endHeight[4]= 2700;                    
 endHeight[5]= 500;                   
 endHeight[6]= 500;  
 endHeight[98]= 99999999999;
@@ -333,8 +334,8 @@ levelButton(225,150,100,50,2,2,10);
 levelButton(350,150,100,50,3,3,10);
 levelButton(475,150,100,50,4,4,10);
 levelButton(600,150,100,50,5,5,10);
-levelButton(100,225,100,50,6,6,10);
-levelButton(225,225,100,50,7,7,10);
+// levelButton(100,225,100,50,6,6,10);
+// levelButton(225,225,100,50,7,7,10);
                                }
 // level end                    
 
@@ -450,21 +451,154 @@ ebox(465, 1456, 64, 64, "blue", 2, 5);
  
  
  }
-        //444444444444444444444444444
+        //444444444444444444444444444 (3)
+
+ if (level == 3) {                               
+ebox(337, 884, 64, 64, "blue", 3, 5);
+ebox(270, 518, 64, 64, "blue", 3, 5);
+ebox(332, 1752, 64, 64, "blue", 3, 5);
+ebox(156, 1993, 64, 64, "blue", 3, 5);
+ebox(117, 1361, 64, 64, "blue", 3, 5);
+ebox(459, 544, 64, 64, "blue", 3, 5);
+ebox(489, 2054, 64, 64, "blue", 3, 5);
+ebox(270, 1181, 64, 64, "blue", 3, 5);
+ebox(441, 2107, 64, 64, "blue", 3, 5);
+ebox(66, 1367, 64, 64, "blue", 3, 5);
+ebox(16, 1112, 64, 64, "blue", 3, 5);
+ebox(461, 324, 64, 64, "blue", 3, 5);
+ebox(419, 843, 64, 64, "blue", 3, 5);
+ebox(477, 771, 64, 64, "blue", 3, 5);
+ebox(401, 1079, 64, 64, "blue", 3, 5);
+ebox(467, 1422, 64, 64, "blue", 3, 5);
+ebox(297, 1801, 64, 64, "blue", 3, 5);
+ebox(589, 339, 64, 64, "blue", 3, 5);
+ebox(709, 743, 64, 64, "blue", 3, 5);
+ebox(51, 966, 64, 64, "blue", 3, 5);
+ebox(264, 2098, 64, 64, "blue", 3, 5);
+ebox(14, 1164, 64, 64, "blue", 3, 5);
+ebox(499, 2204, 64, 64, "blue", 3, 5);
+ebox(243, 1164, 64, 64, "blue", 3, 5);
+ebox(80, 793, 64, 64, "blue", 3, 5);
+ebox(730, 1828, 64, 64, "blue", 3, 5);
+ebox(177, 1854, 64, 64, "blue", 3, 5);
+ebox(719, 1160, 64, 64, "blue", 3, 5);
+ebox(642, 1719, 64, 64, "blue", 3, 5);
+ebox(681, 1053, 64, 64, "blue", 3, 5);
+ebox(569, 1426, 64, 64, "blue", 3, 5);
+ebox(686, 1877, 64, 64, "blue", 3, 5);
+ebox(562, 899, 64, 64, "blue", 3, 5);
+ebox(634, 1241, 64, 64, "blue", 3, 5);
+ebox(604, 611, 64, 64, "blue", 3, 5);
+ebox(685, 176, 64, 64, "blue", 3, 5);
+ebox(315, 1146, 64, 64, "blue", 3, 5);
+ebox(635, 1227, 64, 64, "blue", 3, 5);
+ebox(179, 219, 64, 64, "blue", 3, 5);
+ebox(432, 807, 64, 64, "blue", 3, 5);
+ebox(258, 236, 64, 64, "blue", 3, 5);
+ebox(733, 2185, 64, 64, "blue", 3, 5);
+ebox(585, 629, 64, 64, "blue", 3, 5);
+ebox(258, 442, 64, 64, "blue", 3, 5);
+ebox(563, 883, 64, 64, "blue", 3, 5);
+ebox(183, 1761, 64, 64, "blue", 3, 5);
+ebox(488, 619, 64, 64, "blue", 3, 5);
+ebox(634, 183, 64, 64, "blue", 3, 5);
+ebox(280, 917, 64, 64, "blue", 3, 5);
+ebox(2, 1028, 64, 64, "blue", 3, 5);
+ebox(559, 369, 64, 64, "blue", 3, 5);
+ebox(313, 713, 64, 64, "blue", 3, 5);
+ebox(681, 877, 64, 64, "blue", 3, 5);
+ebox(372, 617, 64, 64, "blue", 3, 5);
+ebox(452, 612, 64, 64, "blue", 3, 5);
+ebox(24, 975, 64, 64, "blue", 3, 5);
+ebox(734, 1494, 64, 64, "blue", 3, 5);
+ebox(659, 1059, 64, 64, "blue", 3, 5);
+ebox(101, 751, 64, 64, "blue", 3, 5);
+ebox(330, 307, 64, 64, "blue", 3, 5);
+ebox(656, 2268, 64, 64, "blue", 3, 5);
+ebox(625, 2100, 64, 64, "blue", 3, 5);
+ebox(273, 1181, 64, 64, "blue", 3, 5);
+ebox(455, 1816, 64, 64, "blue", 3, 5);
+ebox(535, 1277, 64, 64, "blue", 3, 5);
+ebox(79, 2197, 64, 64, "blue", 3, 5);
+ebox(16, 2161, 64, 64, "blue", 3, 5);
+ebox(06, 2326, 64, 64, "blue", 3, 5);
+ebox(82, 2284, 64, 64, "blue", 3, 5);
+ }                          
+                            
+//            5555555555555555555555555555 (4)
                                 
-                                
+ ebox(184, 252, 64, 64, "blue", 4, 5);
+ebox(651, 549, 64, 64, "blue", 4, 5);
+ebox(40, 2190, 64, 64, "blue", 4, 5);
+ebox(640, 2306, 64, 64, "blue", 4, 5);
+ebox(261, 692, 64, 64, "blue", 4, 5);
+ebox(667, 683, 64, 64, "blue", 4, 5);
+ebox(287, 1187, 64, 64, "blue", 4, 5);
+ebox(297, 881, 64, 64, "blue", 4, 5);
+ebox(281, 270, 64, 64, "blue", 4, 5);
+ebox(734, 1974, 64, 64, "blue", 4, 5);
+ebox(69, 2113, 64, 64, "blue", 4, 5);
+ebox(240, 1280, 64, 64, "blue", 4, 5);
+ebox(302, 707, 64, 64, "blue", 4, 5);
+ebox(407, 1649, 64, 64, "blue", 4, 5);
+ebox(404, 2127, 64, 64, "blue", 4, 5);
+ebox(193, 866, 64, 64, "blue", 4, 5);
+ebox(553, 293, 64, 64, "blue", 4, 5);
+ebox(425, 214, 64, 64, "blue", 4, 5);
+ebox(76, 280, 64, 64, "blue", 4, 5);
+ebox(553, 1648, 64, 64, "blue", 4, 5);
+ebox(168, 2510, 64, 64, "blue", 4, 5);
+ebox(356, 2572, 64, 64, "blue", 4, 5);
+ebox(439, 2301, 64, 64, "blue", 4, 5);
+ebox(63, 2595, 64, 64, "blue", 4, 5);
+ebox(350, 1902, 64, 64, "blue", 4, 5);
+ebox(663, 988, 64, 64, "blue", 4, 5);
+ebox(655, 2565, 64, 64, "blue", 4, 5);
+ebox(156, 2129, 64, 64, "blue", 4, 5);
+ebox(161, 320, 64, 64, "blue", 4, 5);
+ebox(198, 767, 64, 64, "blue", 4, 5);
+ebox(548, 2296, 64, 64, "blue", 4, 5);
+ebox(613, 2397, 64, 64, "blue", 4, 5);
+ebox(249, 1670, 64, 64, "blue", 4, 5);
+ebox(69, 293, 64, 64, "blue", 4, 5);
+ebox(703, 2527, 64, 64, "blue", 4, 5);
+ebox(360, 1097, 64, 64, "blue", 4, 5);
+ebox(598, 867, 64, 64, "blue", 4, 5);
+ebox(643, 2606, 64, 64, "blue", 4, 5);
+ebox(291, 241, 64, 64, "blue", 4, 5);
+ebox(292, 1828, 64, 64, "blue", 4, 5);
+ebox(40, 616, 64, 64, "blue", 4, 5);
+ebox(627, 1600, 64, 64, "blue", 4, 5);
+ebox(733, 2359, 64, 64, "blue", 4, 5);
+ebox(40, 1052, 64, 64, "blue", 4, 5);
+ebox(726, 1883, 64, 64, "blue", 4, 5);
+ebox(156, 710, 64, 64, "blue", 4, 5);
+ebox(11, 1955, 64, 64, "blue", 4, 5);
+ebox(253, 1318, 64, 64, "blue", 4, 5);
+ebox(23, 265, 64, 64, "blue", 4, 5);
+ebox(180, 2224, 64, 64, "blue", 4, 5);
+ebox(291, 978, 64, 64, "blue", 4, 5);
+ebox(366, 1175, 64, 64, "blue", 4, 5);
+ebox(412, 1605, 64, 64, "blue", 4, 5);
+ebox(226, 2508, 64, 64, "blue", 4, 5);
+ebox(730, 1574, 64, 64, "blue", 4, 5);                             
+ebox(2, 24510, 64, 64, "blue", 4, 5);
+ebox(5, 255, 64, 64, "blue", 4, 5);
                                 
                                 
 //------------------------end                                   
           
-                    
+     var abc;
+abc = xPos 
+abc += " , "
+abc += enemyY + yPos
        player();
 text('Press  "A or ←" to move left and "D or →" to move right.', 160, Game.height -30, "black", "20px Arial", 0)
 text('Press "Space bar to start', Game.width/2 - 100, Game.height -10, "black", "20px Arial", 0)
 if (level < 90) {text('Level: ' + (level + 1), 10, 40, "#00ce97", "30px Arial", 99)}
-// text(enemyCount, Game.width/2 - 130, Game.height -10, "black", "20px Arial", 99)
+// text(abc, Game.width/2 - 130, Game.height -30, "black", "20px Arial", 99)
 text('Avoid clouds and get to the ground', Game.width/2 - 170, Game.height -10, "black", "20px Arial", 1)
-text('Only 3 levels as of now', Game.width/2 - 130, Game.height -10, "black", "20px Arial", 98)
+text('5 LEVELS', Game.width/2 - 90, Game.height -10, "black", "40px Arial", 98)
 
 // text('', 20, Game.height -30, "black", "20px Arial", 0)
               
