@@ -197,9 +197,10 @@ if (clickM =="play") {menuV = false; clickM = ""}
  }               
  function lockF() {
      
-     if (endHeight[level] < enemyY) { lock = level   
-   
-     }
+     if (endHeight[level] < enemyY) { lock = level}
+      if (level > lock && level < 90) {level = 98}
+     
+     
  }           
                 
  //----------------------------------------------Function End ----------               
@@ -220,8 +221,9 @@ if (clickM =="play") {menuV = false; clickM = ""}
                 
                 
                 ctx.canvas.addEventListener('mousemove', function(event){
-        mouseX = event.clientX - ctx.canvas.offsetLeft;
-        mouseY = event.clientY - ctx.canvas.offsetTop;
+        var rect = Game.getBoundingClientRect();
+        mouseX = Math.round((event.clientX - rect.left) / (rect.right - rect.left) * Game.width);
+        mouseY = Math.round((event.clientY - rect.top) / (rect.bottom - rect.top) * Game.height);
         status = mouseX + " , " + mouseY;
     });
     ctx.canvas.addEventListener('click', function(event){
