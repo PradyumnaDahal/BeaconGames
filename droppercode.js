@@ -198,10 +198,10 @@ if (clickM =="play") {menuV = false; clickM = ""}
  function lockF() {
      
      if (endHeight[level] < enemyY) { lock = level}
-      if (level > lock && level < 90) {level = 98}
+      if (level - 1 > lock && level < 90) {level = 98}
      
      
- }           
+ }            
                 
  //----------------------------------------------Function End ----------               
                 
