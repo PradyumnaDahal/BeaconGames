@@ -1,2 +1,4 @@
 RewriteEngine On
-RewriteRule   ^horse/?$   dropper.htm
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteRule ^([^\.]+)$ $1.htm [NC,L]
