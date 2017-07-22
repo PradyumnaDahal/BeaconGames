@@ -39,7 +39,7 @@ var rKey
 var status
 var menuV;
 var times = 0;
- var high = 0;               
+                
 var mouseX
 var mouseY
 var mouseClick = false;               
@@ -70,7 +70,7 @@ onerun()
      if (keys[82]){restart = true}; // S
      if (keys[65] || keys[37]) {xPos -= 10}; // A
      if (keys[68] || keys[39]) {xPos += 10}; // D    
-    
+     if ((keys[40] || keys[83]) && enemyY > 200) {enemyY += 10}; // D
      if (yPos > Game.height/2 - 20) { yPos = Game.height/2 - 20}
      if (colDown == false || restart == true || (xPos == 0 && yPos > 80 && enemyY + yPos > 80)) {yPos += .405}
      if (xPos < 1 && colDown == false) {yPos += .605; enemyY += 5}
@@ -292,8 +292,8 @@ levelButton(350,150,100,50,3,3,10);
 levelButton(475,150,100,50,4,4,10);
 levelButton(600,150,100,50,5,5,10);
 levelButton(100,225,100,50,6,6,10);
-levelButton(225,225,100,50,7,7,10);
-levelButton(100,300,100,50,38,38,10);
+levelButton(600,225,100,50,7,7,10);
+levelButton(225,300,100,50,38,38,10);
 
                                }
 // level end                    
@@ -779,12 +779,10 @@ times = enemyY/1000;
   
 
  
-for (i = 0; i < 10 + (11 * times); i++) {
+for (i = 0; i < 10 + (10 * times); i++) {
  ebox(endlessX[i + (90 * times)], endlessY[i + (90 * times)] + (1000 * times), 32, 32, "blue", 37, 5);
 }
- 
-  if ((high < enemyY) && level == 37){ high = enemyY;}
-  
+
  
 
 
@@ -809,7 +807,6 @@ if (level < 90) {text('Level: ' + (level + 1), 10, 40, "#00ce97", "30px Arial", 
 text('Avoid clouds and get to the ground', Game.width/2 - 170, Game.height -10, "black", "20px Arial", 1)
 
 text(enemyY, 10, Game.height - 50, "black", "40px Arial", 99)
-text(high, Game.width - 160, Game.height - 50, "black", "40px Arial", 37)
 
 // text('', 20, Game.height -30, "black", "20px Arial", 0)
               
@@ -825,5 +822,5 @@ function getRndInteger(min, max) {
  
 for (i = 0; i < 9999999; i++) {
  endlessX[i] =  getRndInteger(0, 700);                                   
- endlessY[i] = getRndInteger(80, 1200);
+ endlessY[i] = getRndInteger(80, 1000);
 }}
