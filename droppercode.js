@@ -267,7 +267,7 @@ function backgroundF() {
 		   
     if (level >= 50 && level < 80) {menuV = true}
                 
-             lock                      
+                                
         
 		
   // level                                  
@@ -366,7 +366,7 @@ highscore()
 
 
 //--------------------------------------------
-            lock = 70                   
+//            lock = 70                   
 //------------------------end                                   
           
      var abc;
