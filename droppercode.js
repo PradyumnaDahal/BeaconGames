@@ -211,6 +211,24 @@ function highscore() {
 if (level < 90) {text('High Score: ' + high, Game.width - (180 + (highString.length * 17)), Game.height - 20, "#00ce97", "30px Arial", 37)}
     
 }
+function backgroundF() {
+    
+    if (80 > level > 0) {
+        
+   ctx.drawImage(imageA[19], 0, endHeight[level] - enemyY - 10000 + 387 + yPos, 800, 10000)     
+        
+        
+    } }
+    
+
+
+    
+    
+
+
+
+
+
 
 
  //----------------------------------------------Function End ----------               
@@ -282,7 +300,7 @@ imageA[15]=document.getElementById("sl");
 imageA[16]=document.getElementById("sl2");
 imageA[17]=document.getElementById("menu");
 imageA[18]=document.getElementById("menu2");
-imageA[19]=document.getElementById("1");
+imageA[19]=document.getElementById("background");
 imageA[10]=document.getElementById("1");
 imageA[21]=document.getElementById("1");
 if (level == 97) {  
@@ -315,7 +333,7 @@ enemyCount[12]= 1;
                                 
                     
 if (restart == true) {yPos = 10; startBox = Game.width};                    
-                
+    backgroundF()     
     lockF();
     levelS()   
     wall();  
@@ -324,8 +342,7 @@ if (restart == true) {yPos = 10; startBox = Game.width};
                   
 //-----------neeeded each level
                     
-endBox(0, endHeight[level]+120, Game.width, Game.height, "green", 99, 4)
-endBox(0, endHeight[level]-30, 900.6, 151.1, "green", 99, 3) //end box
+endBox(0, endHeight[level], 0, 0, "green", 99, 4)
 if(level < 90) {box(0, 70, startBox, 10, "black", 99)} ;// start box                    
 
 
