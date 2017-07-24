@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+      <meta name="Pradyumna Dahal" content="Game"/> 
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+   <title>Blue Beacon - Dropper</title>    
+<link rel="icon" 
+      href="images/Favicon.png">
+    
+    
+    <style>
+body {margin:0;}
+
+.topnav {
+  overflow: hidden;
+  background-color: #222A2B;
+padding-right: 0%
+        
+}
+
+.topnav a {
+  float: right;
+  display: block;
+  color: #0299AE;
+  text-align: center;
+  padding: 1% 1%;
+  text-decoration: none;
+  font-size: 110%;
+   padding-top: 10000%;
+ position: absolute;
+ 
+    
+    
+   
+    margin-top: 1123213.12315% 
+        
+} 
+
+.topnav a:hover {
+  color: #246068;
+  
+     
+        }
+
+.active {
+    color: white;
+    background-color: #4CAF50;
+  font-size: 110%;
+   padding: 10% 
+   overflow: visible
+    
+    }
+-------------------------------------------------
+        ul {
+    list-style-type: none;
+    margin: 0;
+  
+    overflow: hidden;
+    background-color: #222A2B;
+
+}
+
+li {
+    float: right;
+  display: block;
+  color: #0299AE;
+  text-align: center;
+  padding: 24px 24px;
+  text-decoration: none;
+  font-size: 115%;
+   padding-top:0px
+ position: fixed;  
+    margin: 0% 
+-webkit-transition: background-color .4s ease-out;
+  -moz-transition: background-color .4s ease-out;
+  -o-transition: background-color .4s ease-out;
+  transition: background-color .4s ease-out;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 1% 1%;
+    text-decoration: none;
+    -webkit-transition: background-color .4s ease-out;
+  -moz-transition: background-color .4s ease-out;
+  -o-transition: background-color .4s ease-out;
+  transition: background-color .4s ease-out;
+}
+
+li.p:hover, .dropdown:hover .dropbtn {
+
+background-color: #0299AE;
+  cursor: pointer;
+        }
+
+li.dropdown {
+    display: inline-block;
+
+        
+        
+        
+        }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #222A2B;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: wh;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a.p:hover {background-color: #0299AE;
+  cursor: pointer;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+        
+        </style>
+    
+    </head>
+        <body onload="startGame()" style="background-color:#222A2B"> 
+         
+
+       <topbar  style=" position: fixed; width: 100%;top: 0; background-color: #222A2B; box-shadow: 1px 4px 5px #000000; margin-right:100%;">  
+      
+
+
+<a href="//">
+<img src="images/osKcQpR.png" alt="Blue Beacon" style="height:22.5%;height:auto; padding-left:2%; padding-top 10px; paddin-bottom: 10px; ;max-height: 65px; ">  
+</a>
+
+    
+    <li class="p"><a href="contact" style="margin-right:20px">WIP</a></li>
+    
+    <li class="active dropdown">
+    <a href="javascript:void(0)" class="dropbtn" style="background-color: rgb(0,0,0,0)">Games</a>
+    <div class="dropdown-content">
+      <a class="active" href="dropper">Dropper</a>
+      <a class="p" href="#adsasd">WIP</a>
+      <a class="p" href="#basdssd">WIP</a>
+    </div>
+  </li> 
+    
+    <li class="p"><a href="/">Home</a></li>
+
+    
+            
+    </topbar>        
+            <div style="padding: 4%" overflow:hidden>  </div>
+             
+            
+            
+            
+            
+           <a href="dropper" style="text-align: center;">
+<img src="images/Dropper2.png" float= "center" alt="Dropper image" style=" width:55%;height:auto; padding-left:2%; padding 10px; paddin-bottom: 10px; ; text-align: center; display: block;
+    margin: auto; ">  
+</a>    
+            
+            
+    
+           <canvas id = "Game" width="800" height="500" style="border:solid black 0px;margin:auto; display:block; background-color: white;overflow:hidden;box-shadow: 5px 5px 300px #000000">  </canvas>
+         
+        
+<!--    -------------- Image collection -------------------       --> 
+            
+   <!--    -------------- Templet -------------------       -->     
+<!--  <img id="id" src="link" alt="alt" height="0" width="0"> --> 
+
+<img id="player" src="images/player.png" alt="player" height="0" width="0" style="margin:0px 0px">
+   
+<img id="ground" src="images/ground1.png"  alt="ground" height="0" width="0" style="margin:0px 0px">
+
+<img id="ground2" src="images/ground2.jpg"  alt="ground2" height="0" width="0" style="margin:0px 0px">
+   
+<img id="cloud" src="images/cloud1.png"  alt="cloud" height="0" width="0" style="margin:0px 0px">
+                 
+<img id="play" src="images/play.png"  alt="play" height="0" width="0" style="margin:0px 0px">  
+            
+<img id="dropper" src="images/dropper.png"  alt="menu" height="0" width="0" style="margin:0px 0px">       
+            
+<img id="play2" src="images/play2.png"  alt="cloud" height="0" width="0" style="margin:0px 0px">       
+
+<img id="sl" src="images/Sl.png"  alt="cloud" height="0" width="0" style="margin:0px 0px">  
+
+<img id="sl2" src="images/Sl2.png"  alt="cloud" height="0" width="0" style="margin:0px 0px"> 
+
+<img id="menu" src="images/menu.png"  alt="cloud" height="0" width="0" style="margin:0px 0px">  
+
+<img id="menu2" src="images/menu2.png" alt="cloud" height="0" width="0" style="margin:0px 0px">  
+
+<img id="background" src="images/background-01.png" alt="background" height="0" width="0" style="margin:0px 0px">  
+    
+            
+            
+  <!--    -------------- Image collection End -------------------       --> 
+           
+<script src="droppercode.js"></script>  
+<script src="level3.js"> </script>
+<script src="level4.js"> </script>
+<script src="level5.js"> </script>
+<script src="level6.js"> </script>
+<script src="level7.js"> </script>
+<script src="level8.js"> </script>
+<script src="level9.js"> </script>
+<script src="endless.js"> </script>
+    </body>
+        
+        
+ 
+    
+    
+    
+    
+</html>

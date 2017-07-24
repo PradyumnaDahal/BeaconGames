@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Loops</h2>
+
+<p id="demo"></p>
+
+<script>
+
+    function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+    
+    
+    
+    var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+    
+var text = "";
+var i;
+for (i = 0; i < 80; i++) {
+                                      
+    text += "ebox("   
+text += getRndInteger(0, 780)
+text += ", "
+text += getRndInteger(125, 7050)
+text += ', 32, 32, "blue", 7, 5);'
+text += "<br>"
+text
+
+}
+
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>

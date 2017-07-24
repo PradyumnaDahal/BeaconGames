@@ -100,14 +100,22 @@ function wall () {if (xPos < 0){xPos = 0}; if (xPos > Game.width - pWidth){xPos 
  }
                 
 function ebox(x, y, width, height, color, levelN, imageName) { 
-   if (levelN == level ) { ctx.fillStyle = color;
+  if (endHeight[level] - y > 8100 && endHeight[levelN] - y < 8600 ) {var asdsafds = 0} else {
+    if ((endHeight[levelN] - y < 5700) || levelN == 37) {
+    if (levelN == level ) { ctx.fillStyle = color;
      
     if (imageName != undefined){ctx.drawImage(imageA[imageName], x, y - enemyY, width, height) }
     if (imageName == undefined){ctx.fillRect(x, y - enemyY  + 50, width, height)}
 
      if (xPos + 5 + pWidth > x && xPos - 5  < x + width && enemyY + yPos < y  && enemyY + yPos + pHeight  > y ) {restart = true} }
-    
-    }
+   }
+    else { if (levelN == level ) { ctx.fillStyle = color;
+     
+    if (imageName != undefined){ctx.drawImage(imageA[20], x, y - enemyY, width, height) }
+    if (imageName == undefined){ctx.fillRect(x, y - enemyY  + 50, width, height)}
+
+     if (xPos + 5 + pWidth > x && xPos - 5  < x + width && enemyY + yPos < y  && enemyY + yPos + pHeight  > y ) {restart = true} }
+} } }
                 
 function reset() {if (restart == true) {yPos = 10; startBox = Game.width;  restart = false; rKey = false,enemyY = 0; death += 1; xPos = Game.width/2}}
                
@@ -221,7 +229,15 @@ function backgroundF() {
     } }
     
 
-
+function levels(){
+level3()
+level4()                        
+level5()
+level6()
+level7()
+level8()
+endless()
+}
     
     
 
@@ -279,6 +295,7 @@ endHeight[3]= 2500;
 endHeight[4]= 2700;                    
 endHeight[5]= 4000;                   
 endHeight[6]= 4000;  
+endHeight[7]= 8500;  
 endHeight[38]= 9999;  
 endHeight[98]= 99999999999;
 imageA[0]=document.getElementById("triangle");
@@ -301,7 +318,7 @@ imageA[16]=document.getElementById("sl2");
 imageA[17]=document.getElementById("menu");
 imageA[18]=document.getElementById("menu2");
 imageA[19]=document.getElementById("background");
-imageA[10]=document.getElementById("1");
+imageA[20]=document.getElementById("star");
 imageA[21]=document.getElementById("1");
 if (level == 97) {  
 levelButton(100,150,100,50,1,1,10);
@@ -311,6 +328,7 @@ levelButton(475,150,100,50,4,4,10);
 levelButton(600,150,100,50,5,5,10);
 levelButton(100,225,100,50,6,6,10);
 levelButton(225,225,100,50,7,7,10);
+levelButton(350,225,100,50,8,8,10);
 levelButton(300,400,200,50,"Endless",38,50);
 
                                }
@@ -349,15 +367,7 @@ if(level < 90) {box(0, 70, startBox, 10, "black", 99)} ;// start box
 ebox(600, 300, 64, 64, "blue", 1, 5); 
 ebox(Game.width/2, 300, 128, 128, "blue", 1, 5);                               
                                 
-        // 3333333333333333333333333333 (2)
-level3()
-        //444444444444444444444444444 (3)
-
- level4()                        
- level5()
-level6()
-level7()
-endless()
+levels()
 highscore()
  
   
@@ -366,7 +376,7 @@ highscore()
 
 
 //--------------------------------------------
-//            lock = 70                   
+  lock = 70                   
 //------------------------end                                   
           
      var abc;
